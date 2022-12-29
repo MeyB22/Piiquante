@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+require("dotenv").config()
+
 const express = require("express")
 
 const app = express()
@@ -10,7 +12,7 @@ const sauceRoutes = require('./routes/sauceRoute')
 
 const path = require("path")
 
-mongoose.connect('mongodb+srv://Meyer:Meyerbena1@cluster0.qsjrnge.mongodb.net/piquante?retryWrites=true&w=majority',{
+mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.qsjrnge.mongodb.net/piquante?retryWrites=true&w=majority`,{
     useNewUrlParser : true,
     useUnifiedTopology : true
 }).then(()=>console.log('conexion reussie'))

@@ -34,7 +34,7 @@ exports.login = (req,res,next) => {
                     userId : user._id,
                     token : jwt.sign(
                         {userId:user._id},
-                        'd1d982fd-03ad-4f9b-ab58-70de11fc42ac',
+                        process.env.TOKEN,
                         {expiresIn : '24h'}
                     )
 
