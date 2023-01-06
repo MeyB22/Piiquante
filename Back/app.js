@@ -18,12 +18,14 @@ const sauceRoutes = require('./routes/sauceRoute')
 
 const path = require("path")
 
+//conexion a mongodb
 mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.qsjrnge.mongodb.net/piquante?retryWrites=true&w=majority`,{
     useNewUrlParser : true,
     useUnifiedTopology : true
 }).then(()=>console.log('conexion reussie'))
     .catch(()=>console.log('conexion lost'))
 
+//Intergiciel de limitation de débit
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)

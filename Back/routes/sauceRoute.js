@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const sauceControlleur = require('../controlleurs/sauceControlleur')
+const sauceControlleur = require('../controlleurs/sauceController')
 
 const auth = require("../middleware/auth")
 

@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const userControlleur = require('../controlleurs/userControlleur')
+const userControlleur = require('../controlleurs/userController')
 
 const passwordValidator = require('../middleware/passwordValidator')
 
